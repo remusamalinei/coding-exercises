@@ -9,10 +9,10 @@ class PlayerTest extends FlatSpec with Matchers {
 
   def fixture =
     new {
-      val goat: Player = Player("goat")()
-      val wolf: Player = Player("wolf")(injuredPlayerSet = Set(goat))
-      val bear: Player = Player("bear")(injuredPlayerSet = Set(goat))
-      val farmer: Player = Player("farmer")(defendedPlayerMap = Map(goat -> wolf))
+      val goat = Player("goat")()
+      val wolf = Player("wolf")(injuredPlayerSet = Set(goat))
+      val bear = Player("bear")(injuredPlayerSet = Set(goat))
+      val farmer = Player("farmer")(defendedPlayerMap = Map(goat -> wolf))
     }
 
   "A Player" should "injure a player" in {
