@@ -3,9 +3,9 @@ package domain
 /**
  * @author Remus Amalinei
  */
-case class Player (name: String)
-                 (injuredPlayerSet: Set[Player] = Set.empty,
-                  defendedPlayerMap: Map[Player, Injurer] = Map.empty)
+case class Player (name: String, sailor: Boolean = false)
+                 (val injuredPlayerSet: Set[Player] = Set.empty,
+                  val defendedPlayerMap: Map[Player, Injurer] = Map.empty)
   extends Injurer with Defender {
 
   if (samePlayerIsBothInjuredAndDefeated(injuredPlayerSet, defendedPlayerMap)) {
