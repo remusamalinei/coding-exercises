@@ -8,5 +8,5 @@ object ConstantPlayers {
   val Goat = Player("goat")(injuredPlayerSet = Set(Cabbage))
   val Wolf = Player("wolf")(injuredPlayerSet = Set(Goat))
   val Bear = Player("bear")(injuredPlayerSet = Set(Goat))
-  val Farmer = Player("farmer")(defendedPlayerMap = Map(Goat -> Wolf, Cabbage -> Goat))
+  val Farmer = Player("farmer", sailor = true)(defendedPlayerMap = Map(Goat -> Wolf, Cabbage -> Goat))
 }
