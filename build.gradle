@@ -1,0 +1,22 @@
+subprojects {
+    apply plugin: 'scala'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile 'org.scala-lang:scala-library-all:2.11.6'
+        compile 'com.typesafe.akka:akka-actor-tests_2.11:2.3.12'
+
+        testCompile 'junit:junit:4.12'
+        testCompile 'org.scalatest:scalatest_2.11:2.2.5'
+    }
+
+    tasks.withType(Test) {
+        testLogging {
+            events 'passed', 'skipped', 'failed'
+            exceptionFormat 'full'
+        }
+    }
+}
