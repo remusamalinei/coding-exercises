@@ -1,7 +1,6 @@
 package ra.topranker.actor
 
 import ra.topranker.actor.TopRankerActor.{AddScore, QueryTopScores, TopScores}
-import ra.topranker.application.TopRankerService
 import ra.topranker.domain.service.ScoreSorterService
 import ra.topranker.domain.{Player, Score}
 

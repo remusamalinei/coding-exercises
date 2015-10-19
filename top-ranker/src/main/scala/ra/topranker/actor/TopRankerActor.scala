@@ -9,10 +9,13 @@ import akka.actor.Actor
  * @author Remus Amalinei
  */
 object TopRankerActor {
+
   case class AddScore(score: Score)
+
   case class QueryTopScores()
 
   case class TopScores(scores: IndexedSeq[Score])
+
 }
 
 class TopRankerActor(scoreSorterService: ScoreSorterService) extends Actor {

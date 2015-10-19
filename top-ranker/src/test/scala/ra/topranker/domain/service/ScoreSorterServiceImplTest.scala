@@ -12,7 +12,7 @@ import org.scalatest.{FlatSpec, Matchers}
 @RunWith(classOf[JUnitRunner])
 class ScoreSorterServiceImplTest extends FlatSpec with Matchers {
 
-  "The ScoreSorterServiceImpl" should "sort score descending" in {
+  "The ScoreSorterServiceImpl" should "sort scores descending" in {
     val scoreSorterService = new ScoreSorterServiceImpl()
 
     1 to 20 foreach {
@@ -24,9 +24,7 @@ class ScoreSorterServiceImplTest extends FlatSpec with Matchers {
     }
     scoreSorterService.addScore(Score(Player("2nd best score"), 20))
 
-
-
-    scoreSorterService.retrieveTopScores() should be(expectedTopScore)
+    scoreSorterService.retrieveTopScores() should be(expectedTopScore())
   }
 
   def expectedTopScore(): IndexedSeq[Score] = Vector(
