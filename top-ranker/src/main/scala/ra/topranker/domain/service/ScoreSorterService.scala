@@ -7,7 +7,7 @@ import ra.topranker.domain.Score
  */
 trait ScoreSorterService {
 
-  def addScore(score: Score): Unit
+  def addScore(newScore: Score): Unit
 
   def retrieveTopScores(): IndexedSeq[Score]
 }
