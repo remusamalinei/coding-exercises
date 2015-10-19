@@ -3,8 +3,8 @@ package ra.topranker.domain
 /**
  * @author Remus Amalinei
  */
-case class Score(player: Player, score: Int) {
+case class Score(player: Player, value: Int) {
 
   require(player != null)
-  require(score > 0)
+  require(value > 0)
 }
