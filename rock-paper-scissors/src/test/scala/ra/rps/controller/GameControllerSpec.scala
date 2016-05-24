@@ -5,8 +5,8 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FeatureSpec, GivenWhenThen, Matchers}
 
 /**
- * @author Remus Amalinei
- */
+  * @author Remus Amalinei
+  */
 @RunWith(classOf[JUnitRunner])
 class GameControllerSpec extends FeatureSpec with GivenWhenThen with Matchers {
 
