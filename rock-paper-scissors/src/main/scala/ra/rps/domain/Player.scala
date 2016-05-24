@@ -5,9 +5,9 @@ package ra.rps.domain
   */
 trait Player {
 
-  def score(): Int
+  def score: Int
 
-  def throwNextShape(): Shape
+  def nextThrownShape: Shape
 
   def updateScorePlayingAgainst(shape: Shape): Outcome.Value
 }

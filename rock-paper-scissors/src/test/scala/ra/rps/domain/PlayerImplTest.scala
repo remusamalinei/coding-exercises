@@ -36,7 +36,7 @@ class PlayerImplTest extends FlatSpec with Matchers with MockFactory {
 
     val player = new PlayerImpl("test", shapeGeneratorMocked)
 
-    player.throwNextShape() should be(Rock)
+    player.nextThrownShape should be(Rock)
   }
 
   it should "have the score incremented only when they win" in {
@@ -51,7 +51,7 @@ class PlayerImplTest extends FlatSpec with Matchers with MockFactory {
       (shapeGeneratorMocked.next _).expects().returning(Rock)
       val player = new PlayerImpl("test", shapeGeneratorMocked)
 
-      player.throwNextShape()
+      player.nextThrownShape
 
       player.updateScorePlayingAgainst(againstShape) should be(expectedOutcome)
       player.score should be(expectedScore)

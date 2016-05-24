@@ -17,9 +17,9 @@ class PlayerImpl
 
   def currentShape = _currentShape
 
-  override def score() = _score
+  override def score = _score
 
-  override def throwNextShape(): Shape = {
+  override def nextThrownShape: Shape = {
     _currentShape = shapeThrower.next()
 
     currentShape
