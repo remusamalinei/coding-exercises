@@ -7,7 +7,7 @@ import ra.rps.domain.service.ShapeThrower
   */
 class PlayerImpl
 (
-  private val name: String,
+  override val name: String,
   private val shapeThrower: ShapeThrower) extends Player {
 
   require(!name.trim.isEmpty && (name.trim.length < 16))

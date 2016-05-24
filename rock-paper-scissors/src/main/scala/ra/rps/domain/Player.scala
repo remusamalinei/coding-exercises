@@ -5,6 +5,8 @@ package ra.rps.domain
   */
 trait Player {
 
+  def name: String
+
   def score: Int
 
   def nextThrownShape: Shape

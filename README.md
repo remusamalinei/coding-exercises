@@ -7,9 +7,10 @@ correctness and the right usage of dependencies.
 
 ##rock-paper-scissors
 A console-based implementation of the [rock-paper-scissors game](https://en.wikipedia.org/wiki/Rock-paper-scissors)
+**Note:** this is under active development: the domain and service layers were added; infrastructure, controller and view will follow shortly.
 
 ##roulette
-In early development phases (may be completely redesigned).
+In early development phases (may be completely redesigned, no recent development).
 
 ##top-ranker
 A concurrent solution, using the actor model, that uses a simple data structure to maintain a the top-n list of
