@@ -7,5 +7,5 @@ import ra.rps.domain.Shape
   */
 trait ShapeThrower {
 
-  def next(): Shape
+  def next: Shape
 }
