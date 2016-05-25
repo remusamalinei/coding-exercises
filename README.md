@@ -7,7 +7,7 @@ correctness and the right usage of dependencies.
 
 ##rock-paper-scissors
 A console-based implementation of the [rock-paper-scissors game](https://en.wikipedia.org/wiki/Rock-paper-scissors)
-**Note:** this is under active development: the domain and service layers were added; infrastructure, controller and view will follow shortly.
+**Note:** this is under active development: the domain, service and infrastructure layers were added; controller and view will follow shortly.
 
 ##roulette
 In early development phases (may be completely redesigned, no recent development).

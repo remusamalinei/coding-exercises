@@ -7,5 +7,5 @@ import ra.rps.domain.Shape
   */
 trait GameStrategy {
 
-  val shapes: Set[Shape]
+  def shapes: Set[Shape]
 }
