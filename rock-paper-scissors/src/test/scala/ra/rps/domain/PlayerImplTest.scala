@@ -1,6 +1,7 @@
 package ra.rps.domain
 
-import ra.rps.domain.Shape.Rock
+import ra.rps.domain.Outcome.{Loss, Tie, Win}
+import ra.rps.domain.Shape.{Paper, Rock, Scissors}
 import ra.rps.domain.service.ShapeThrower
 
 import org.junit.runner.RunWith
@@ -17,7 +18,7 @@ class PlayerImplTest extends FlatSpec with Matchers with MockFactory {
 
   "Player" should "throw an exception when is constructed with invalid params" in {
     val dummyImpl = new ShapeThrower {
-      override def next(): Shape = Rock
+      override def next: Shape = Rock
     }
 
     val invalidParams = Table(
@@ -41,14 +42,23 @@ class PlayerImplTest extends FlatSpec with Matchers with MockFactory {
 
   it should "have the score incremented only when they win" in {
     val expectations = Table(
-      ("againstShape", "expectedOutcome", "expectedScore"),
-      (Rock, Outcome.Tie, 0),
-      (Shape.Paper, Outcome.Loss, 0),
-      (Shape.Scissors, Outcome.Win, 1))
+      ("shape", "againstShape", "expectedOutcome", "expectedScore"),
 
-    forAll(expectations) { (againstShape, expectedOutcome, expectedScore) =>
+      (Rock, Rock, Tie, 0),
+      (Rock, Paper, Loss, 0),
+      (Rock, Scissors, Win, 1),
+
+      (Paper, Rock, Win, 1),
+      (Paper, Paper, Tie, 0),
+      (Paper, Scissors, Loss, 0),
+
+      (Scissors, Rock, Loss, 0),
+      (Scissors, Paper, Win, 1),
+      (Scissors, Scissors, Tie, 0))
+
+    forAll(expectations) { (shape, againstShape, expectedOutcome, expectedScore) =>
       val shapeGeneratorMocked = mock[ShapeThrower]
-      (shapeGeneratorMocked.next _).expects().returning(Rock)
+      (shapeGeneratorMocked.next _).expects().returning(shape)
       val player = new PlayerImpl("test", shapeGeneratorMocked)
 
       player.nextThrownShape

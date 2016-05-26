@@ -16,7 +16,7 @@ object Shape {
 
   val WinsAgainstShapeMap = Map[Shape, Shape](
     Rock -> Scissors,
-    Scissors -> Rock,
+    Scissors -> Paper,
     Paper -> Rock
   )
 
