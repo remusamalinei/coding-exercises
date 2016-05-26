@@ -21,7 +21,7 @@ class InputStreamShapeThrower
     shapeArray.
       zipWithIndex.
       foreach {
-        case (element, index) => println(s"$element ($index)")
+        case (element, index) => print(s"$element ($index) ")
       }
 
     try {
@@ -29,8 +29,7 @@ class InputStreamShapeThrower
 
       shapeArray(index)
     } catch {
-      case e: NumberFormatException => next
-      case e: ArrayIndexOutOfBoundsException => next
+      case _: NumberFormatException | _: ArrayIndexOutOfBoundsException => next
     }
   }
 }
