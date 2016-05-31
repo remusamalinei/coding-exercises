@@ -1,4 +1,4 @@
-package ra.rps.service
+package ra.rps.application
 
 import ra.rps.domain.Outcome.{Loss, Win}
 import ra.rps.domain.Shape.{Paper, Rock}

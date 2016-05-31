@@ -4,7 +4,7 @@ import ra.rps.domain.{PlayerImpl, RoundResult}
 import ra.rps.domain.service.RockPaperScissorsGameStrategy
 import ra.rps.infrastructure.{InputStreamShapeThrower, RandomShapeThrower}
 import ra.rps.infrastructure.random.RandomIntGenerator
-import ra.rps.service.{GameService, GameServiceImpl}
+import ra.rps.application.{GameService, GameServiceImpl}
 
 import java.io.InputStream
 

@@ -3,7 +3,7 @@ package ra.rps.controller
 import ra.rps.domain.Outcome.{Loss, Win}
 import ra.rps.domain.RoundResult
 import ra.rps.domain.Shape.{Paper, Rock}
-import ra.rps.service.GameService
+import ra.rps.application.GameService
 
 import org.junit.runner.RunWith
 import org.scalamock.scalatest.MockFactory
