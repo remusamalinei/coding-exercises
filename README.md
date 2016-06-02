@@ -33,9 +33,6 @@ accordingly.
 - Inject the _GameStrategy_ implementation into the _ShapeThrower_ implementation when the latter is constructed in
 _GameController_.
 
-##roulette
-  In early development phases (may be completely redesigned, no recent development).
-
 ##top-ranker
   A concurrent solution, using the actor model, that uses a simple data structure to maintain a the top-n list of
 players sorted by score.

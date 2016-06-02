@@ -1,4 +1,3 @@
 include 'maze',
         'rock-paper-scissors',
-        'roulette',
         'top-ranker'
