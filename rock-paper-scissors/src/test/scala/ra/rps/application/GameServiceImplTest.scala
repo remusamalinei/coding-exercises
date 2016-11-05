@@ -17,8 +17,8 @@ class GameServiceImplTest extends FlatSpec with Matchers with MockFactory {
 
   "The game" should "be played by delegating to domain" in {
     val expectedRoundResults = (
-      new RoundResult(Rock, Loss, "a", 0),
-      new RoundResult(Paper, Win, "b", 1))
+      RoundResult(Rock, Loss, "a", 0),
+      RoundResult(Paper, Win, "b", 1))
 
     val playerAMocked = mock[Player]
     (playerAMocked.nextThrownShape _).expects().returning(Rock)

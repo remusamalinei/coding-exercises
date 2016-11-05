@@ -18,8 +18,8 @@ class GameControllerTest extends FlatSpec with Matchers with MockFactory {
 
   "GameController" should "delegate play to GameService" in {
     val expectedRoundResults = (
-      new RoundResult(Rock, Loss, "a", 0),
-      new RoundResult(Paper, Win, "b", 1))
+      RoundResult(Rock, Loss, "a", 0),
+      RoundResult(Paper, Win, "b", 1))
 
     val gameServiceMocked = mock[GameService]
     (gameServiceMocked.play _).expects().returning(expectedRoundResults)

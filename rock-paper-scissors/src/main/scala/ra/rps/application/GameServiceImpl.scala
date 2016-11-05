@@ -18,7 +18,7 @@ class GameServiceImpl
     val outcomeForPlayerB = playerB.updateScorePlayingAgainst(shapeA)
 
     (
-      new RoundResult(shapeA, outcomeForPlayerA, playerA.name, playerA.score),
-      new RoundResult(shapeB, outcomeForPlayerB, playerB.name, playerB.score))
+      RoundResult(shapeA, outcomeForPlayerA, playerA.name, playerA.score),
+      RoundResult(shapeB, outcomeForPlayerB, playerB.name, playerB.score))
   }
 }
