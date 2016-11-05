@@ -4,8 +4,17 @@ The acceptance/integration tests were written first, as automated validations fo
 value. Using DDD best practices, the domain is at the core of the solution. Unit tests are used to prove the logic
 correctness and the right usage of dependencies.
 
+Table of Contents  
+1 [maze](#maze)
+2 [river-crossing](#river-crossing)
+3 [rock-paper-scissors](#rock-paper-scissors)
+4 [top-ranker](#top-ranker)
+
 ##maze
 Automatic maze exploration.
+
+##river-crossing
+A solution for the River Crossing puzzle, see [my blog post](https://remusamalinei.blogspot.com/2015/07/river-crossing-with-scala.html) too.
 
 ##rock-paper-scissors
 A console-based implementation of the [rock-paper-scissors game](https://en.wikipedia.org/wiki/Rock-paper-scissors)
