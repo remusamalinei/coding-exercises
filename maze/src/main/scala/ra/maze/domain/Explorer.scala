@@ -15,10 +15,10 @@ class Explorer(private val maze: Maze) {
   private var visitedCellToDirection: mutable.Map[Cell, Set[CardinalPoint.Value]] = mutable.Map()
   private var visitedCells: mutable.MutableList[Cell] = mutable.MutableList()
 
-  def findExit(): Boolean = {
+  def findExit(): Boolean =
     if (maze.cellType(_position) == Exit) true
-    else (moveToNotExploredCell() || moveToNotExploredDirection())
-  }
+    else
+      moveToNotExploredCell() || moveToNotExploredDirection()
 
   private def moveToNotExploredCell(): Boolean = {
     CardinalPoint.values.foreach { d =>
@@ -57,7 +57,7 @@ class Explorer(private val maze: Maze) {
     visitedCells += _position
 
     val visitedDirections = visitedCellToDirection.getOrElse(_position, Set())
-    visitedCellToDirection(_position) = (visitedDirections + direction)
+    visitedCellToDirection(_position) = visitedDirections + direction
   }
 
   private def turnRight(): Unit = {

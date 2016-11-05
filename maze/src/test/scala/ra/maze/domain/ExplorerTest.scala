@@ -12,7 +12,7 @@ import org.scalatest.{FlatSpec, Matchers}
 class ExplorerTest extends FlatSpec with Matchers with MockFactory {
 
   "Explorer" should "drop in to the Start point" in {
-    val expectedStartCell = new Cell(10, 10)
+    val expectedStartCell = Cell(10, 10)
 
     val mazeMock = mock[Maze]
     (mazeMock.startCell _).expects().returning(expectedStartCell)

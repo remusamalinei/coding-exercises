@@ -46,7 +46,7 @@ class MazeImplTest extends FlatSpec with Matchers with MockFactory {
 
     val maze = new MazeImpl(mazeReaderMock)
 
-    maze.startCell should be(new Cell(1, 1))
+    maze.startCell should be(Cell(1, 1))
   }
 
   it should "know what exists at any coordinates" in {
@@ -63,7 +63,7 @@ class MazeImplTest extends FlatSpec with Matchers with MockFactory {
 
       val maze = new MazeImpl(mazeReaderMock)
 
-      maze.cellType(new Cell(x, y)) should be(cellType)
+      maze.cellType(Cell(x, y)) should be(cellType)
     }
   }
 
@@ -73,7 +73,7 @@ class MazeImplTest extends FlatSpec with Matchers with MockFactory {
 
     val maze = new MazeImpl(mazeReaderMock)
 
-    an[ArrayIndexOutOfBoundsException] should be thrownBy maze.cellType(new Cell(123, 456))
+    an[ArrayIndexOutOfBoundsException] should be thrownBy maze.cellType(Cell(123, 456))
   }
 
   val CorrectMazeRepresentation = Array(

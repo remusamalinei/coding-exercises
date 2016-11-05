@@ -20,7 +20,7 @@ class MazeExplorerSpec extends FeatureSpec with GivenWhenThen with Matchers with
   info("In order to either find the Exit")
   info("Or return to Start and conclude there is no path to the Exit")
 
-  val ExpectedStartCell = new Cell(10, 10)
+  val ExpectedStartCell = Cell(10, 10)
 
   feature("Given a maze the Explorer should be able to automatically explore it") {
 
