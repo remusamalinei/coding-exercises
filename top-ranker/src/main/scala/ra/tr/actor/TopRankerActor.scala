@@ -1,7 +1,7 @@
-package ra.topranker.actor
+package ra.tr.actor
 
-import ra.topranker.domain.Score
-import ra.topranker.domain.service.ScoreSorterService
+import ra.tr.domain.Score
+import ra.tr.domain.service.ScoreSorterService
 
 import akka.actor.Actor
 

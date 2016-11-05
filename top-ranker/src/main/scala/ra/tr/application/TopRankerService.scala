@@ -1,7 +1,7 @@
-package ra.topranker.application
+package ra.tr.application
 
-import ra.topranker.actor.TopRankerActor.{AddScore, QueryTopScores, TopScores}
-import ra.topranker.domain.Score
+import ra.tr.actor.TopRankerActor.{AddScore, QueryTopScores, TopScores}
+import ra.tr.domain.Score
 
 import scala.concurrent.Future
 

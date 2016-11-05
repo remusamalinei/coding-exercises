@@ -1,6 +1,6 @@
-package ra.topranker.domain.service
+package ra.tr.domain.service
 
-import ra.topranker.domain.Score
+import ra.tr.domain.Score
 
 /**
  * @author Remus Amalinei

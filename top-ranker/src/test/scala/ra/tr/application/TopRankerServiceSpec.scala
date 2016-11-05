@@ -1,9 +1,9 @@
-package ra.topranker.application
+package ra.tr.application
 
-import ra.topranker.actor.TopRankerActor
-import ra.topranker.actor.TopRankerActor.TopScores
-import ra.topranker.domain.service.ScoreSorterServiceImpl
-import ra.topranker.domain.{Player, Score}
+import ra.tr.actor.TopRankerActor
+import ra.tr.actor.TopRankerActor.TopScores
+import ra.tr.domain.service.ScoreSorterServiceImpl
+import ra.tr.domain.{Player, Score}
 
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
@@ -57,7 +57,7 @@ class TopRankerServiceSpec extends FeatureSpec with GivenWhenThen with Matchers 
       Given("the top is empty")
 
       When("a Score is added")
-      val score = new Score(Player("test"), 1)
+      val score = Score(Player("test"), 1)
       topRankerService.addScore(score)
 
       Then("the returned top contains the Score")
@@ -73,12 +73,10 @@ class TopRankerServiceSpec extends FeatureSpec with GivenWhenThen with Matchers 
         Score(Player("player-1"), 1),
         Score(Player("player-3"), 3))
 
-      existingScores.foreach {
-        case s => topRankerService.addScore(s)
-      }
+      existingScores.foreach(s => topRankerService.addScore(s))
 
       When("A Score is added")
-      val score = new Score(Player("player-2"), 2)
+      val score = Score(Player("player-2"), 2)
       topRankerService.addScore(score)
 
       Then("The returned top contains the Score")
@@ -103,12 +101,10 @@ class TopRankerServiceSpec extends FeatureSpec with GivenWhenThen with Matchers 
         Score(Player("player-9"), 29),
         Score(Player("player-10"), 30))
 
-      existingScores.foreach {
-        case s => topRankerService.addScore(s)
-      }
+      existingScores.foreach(s => topRankerService.addScore(s))
 
       When("A top Score is added")
-      val score = new Score(Player("player-11"), 20)
+      val score = Score(Player("player-11"), 20)
       topRankerService.addScore(score)
 
       Then("The returned top contains the Score")
@@ -134,12 +130,10 @@ class TopRankerServiceSpec extends FeatureSpec with GivenWhenThen with Matchers 
         Score(Player("player-9"), 29),
         Score(Player("player-10"), 30))
 
-      existingScores.foreach {
-        case s => topRankerService.addScore(s)
-      }
+      existingScores.foreach(s => topRankerService.addScore(s))
 
       When("A lower than the minimum score is added")
-      val minScore = new Score(Player("player-1"), 1)
+      val minScore = Score(Player("player-1"), 1)
       topRankerService.addScore(minScore)
 
       Then("The returned top does not contain the Score")
@@ -156,9 +150,7 @@ class TopRankerServiceSpec extends FeatureSpec with GivenWhenThen with Matchers 
         Score(Player("player-2"), 2),
         Score(Player("player-3"), 3))
 
-      existingScores.foreach {
-        case s => topRankerService.addScore(s)
-      }
+      existingScores.foreach(s => topRankerService.addScore(s))
 
       When("A Score with the same value as an existing Score is added")
       val sameScore = Score(Player("another player-2"), 2)

@@ -1,4 +1,4 @@
-package ra.topranker.domain
+package ra.tr.domain
 
 /**
  * @author Remus Amalinei

@@ -1,6 +1,6 @@
-package ra.topranker.domain.service
+package ra.tr.domain.service
 
-import ra.topranker.domain.{Player, Score}
+import ra.tr.domain.{Player, Score}
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
@@ -15,8 +15,7 @@ class ScoreSorterServiceImplTest extends FlatSpec with Matchers {
   "The ScoreSorterServiceImpl" should "sort scores descending" in {
     val scoreSorterService = new ScoreSorterServiceImpl()
 
-    1 to 20 foreach {
-      case i =>
+    1 to 20 foreach { i =>
         val player = Player(s"player $i")
         val score = Score(player, i)
 

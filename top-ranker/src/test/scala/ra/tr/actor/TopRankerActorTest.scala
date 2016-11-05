@@ -1,8 +1,8 @@
-package ra.topranker.actor
+package ra.tr.actor
 
-import ra.topranker.actor.TopRankerActor.{AddScore, QueryTopScores, TopScores}
-import ra.topranker.domain.service.ScoreSorterService
-import ra.topranker.domain.{Player, Score}
+import ra.tr.actor.TopRankerActor.{AddScore, QueryTopScores, TopScores}
+import ra.tr.domain.service.ScoreSorterService
+import ra.tr.domain.{Player, Score}
 
 import akka.actor.{ActorSystem, Props}
 import akka.testkit.{ImplicitSender, TestKit}
