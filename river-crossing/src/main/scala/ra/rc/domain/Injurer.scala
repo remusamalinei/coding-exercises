@@ -1,4 +1,4 @@
-package domain
+package ra.rc.domain
 
 /**
  * @author Remus Amalinei

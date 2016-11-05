@@ -1,6 +1,6 @@
-package application
+package ra.rc.application
 
-import domain.{Solution, SolutionStep}
+import ra.rc.domain.{Solution, SolutionStep}
 
 import scala.annotation.tailrec
 import scala.collection.immutable.Set

@@ -1,6 +1,6 @@
-package domain
+package ra.rc.domain
 
-import domain.ConstantPlayers._
+import ra.rc.domain.ConstantPlayers._
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FlatSpec, Matchers}

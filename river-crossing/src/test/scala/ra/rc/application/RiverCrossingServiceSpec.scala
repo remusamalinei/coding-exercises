@@ -1,7 +1,7 @@
-package application
+package ra.rc.application
 
-import domain.ConstantPlayers._
-import domain.{Player, Solution, SolutionStep}
+import ra.rc.domain.ConstantPlayers._
+import ra.rc.domain.{Player, Solution, SolutionStep}
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.{Matchers, FeatureSpec, GivenWhenThen}

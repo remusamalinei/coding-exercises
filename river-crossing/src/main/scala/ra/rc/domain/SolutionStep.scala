@@ -1,4 +1,4 @@
-package domain
+package ra.rc.domain
 
 import scala.annotation.tailrec
 
@@ -20,10 +20,12 @@ case class SolutionStep(leftBankPlayerSet: Set[Player],
     for {
       player <- sourceSet
       if player.sailor
-    } yield buildSolutionStep((sourceSet - player), (destinationSet + player))
+      newSourceSet = sourceSet - player
+      newDestinationSet = destinationSet + player
+    } yield buildSolutionStep(newSourceSet, newDestinationSet)
   }
 
-  private def sourceDestinationSetTuple: Tuple2[Set[Player], Set[Player]] = {
+  private def sourceDestinationSetTuple: (Set[Player], Set[Player]) = {
     val sourceSet =
       if (boatOnLeftBank) leftBankPlayerSet
       else rightBankPlayerSet
@@ -48,7 +50,9 @@ case class SolutionStep(leftBankPlayerSet: Set[Player],
       if sailorPlayer.sailor
       player <- sourceSet
       if sailorPlayer != player
-    } yield buildSolutionStep((sourceSet - sailorPlayer - player), (destinationSet + sailorPlayer + player))
+      newSourceSet = sourceSet - sailorPlayer - player
+      newDestinationSet = destinationSet + sailorPlayer + player
+    } yield buildSolutionStep(newSourceSet, newDestinationSet)
   }
 
   def isFinalStep: Boolean = leftBankPlayerSet.isEmpty
@@ -60,10 +64,10 @@ case class SolutionStep(leftBankPlayerSet: Set[Player],
     injuredPlayerTupleSet(playerSet) != defendedPlayerTupleSet(playerSet)
   }
 
-  private def injuredPlayerTupleSet(playerSet: Set[Player]): Set[Tuple2[Player, Injurer]] = {
+  private def injuredPlayerTupleSet(playerSet: Set[Player]): Set[(Player, Injurer)] = {
 
     @tailrec
-    def go(pSet: Set[Player], iPlayerTupleSet: Set[Tuple2[Player, Injurer]]): Set[Tuple2[Player, Injurer]] = {
+    def go(pSet: Set[Player], iPlayerTupleSet: Set[(Player, Injurer)]): Set[(Player, Injurer)] = {
       if (pSet.isEmpty) iPlayerTupleSet
       else {
         val firstPlayer = pSet.head
@@ -72,23 +76,24 @@ case class SolutionStep(leftBankPlayerSet: Set[Player],
           if playerSet.contains(p)
         } yield (p, firstPlayer)
 
-        go(pSet.tail, iPlayerTupleSet ++ tupleSet.toSet)
+        go(pSet.tail, iPlayerTupleSet ++ tupleSet)
       }
     }
 
     go(playerSet, Set.empty)
   }
 
-  private def defendedPlayerTupleSet(playerSet: Set[Player]): Set[Tuple2[Player, Injurer]] = {
+  private def defendedPlayerTupleSet(playerSet: Set[Player]): Set[(Player, Injurer)] = {
 
     @tailrec
-    def go(pSet: Set[Player], dPlayerTupleSet: Set[Tuple2[Player, Injurer]]): Set[Tuple2[Player, Injurer]] = {
+    def go(pSet: Set[Player], dPlayerTupleSet: Set[(Player, Injurer)]): Set[(Player, Injurer)] = {
       if (pSet.isEmpty) dPlayerTupleSet
       else {
         val firstPlayer = pSet.head
         val map = for {
           (p, i) <- firstPlayer.defendedPlayerMap
-          if (playerSet.contains(p) && playerSet.contains(i.asInstanceOf[Player]))
+          if playerSet.contains(p)
+          if playerSet.contains(i.asInstanceOf[Player])
         } yield (p, i)
 
         go(pSet.tail, dPlayerTupleSet ++ map.to[Set])
