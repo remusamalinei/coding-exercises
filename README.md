@@ -4,11 +4,14 @@ The acceptance/integration tests were written first, as automated validations fo
 value. Using DDD best practices, the domain is at the core of the solution. Unit tests are used to prove the logic
 correctness and the right usage of dependencies.
 
-Table of Contents  
-1 [maze](#maze)
-2 [river-crossing](#river-crossing)
-3 [rock-paper-scissors](#rock-paper-scissors)
-4 [top-ranker](#top-ranker)
+* [exchange](#maze)  
+* [maze](#maze)  
+* [river-crossing](#river-crossing)  
+* [rock-paper-scissors](#rock-paper-scissors)  
+* [top-ranker](#top-ranker)  
+
+##exchange
+A simple exchange engine that matches market orders.
 
 ##maze
 Automatic maze exploration.
