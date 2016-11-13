@@ -14,7 +14,7 @@ class RiverCrossingServiceSpec extends FeatureSpec with GivenWhenThen with Match
 
   info("As a user")
   info("I want to be able to sail off players across the river")
-  info("So I can move an entire group of player on the other bank")
+  info("So I can move an entire group of players on the other bank")
 
   feature("River crossing") {
     scenario("Farmer and friends cross the river - happy path") {
