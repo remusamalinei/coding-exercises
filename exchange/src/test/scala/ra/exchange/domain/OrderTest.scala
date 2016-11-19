@@ -3,7 +3,6 @@ package ra.exchange.domain
 import ra.exchange.domain.Order.Direction.{Buy, Sell}
 
 import org.junit.runner.RunWith
-import org.scalamock.scalatest.MockFactory
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.prop.TableDrivenPropertyChecks.{Table, forAll}
 import org.scalatest.{FlatSpec, Matchers}
@@ -12,35 +11,28 @@ import org.scalatest.{FlatSpec, Matchers}
   * @author Remus Amalinei
   */
 @RunWith(classOf[JUnitRunner])
-class OrderTest extends FlatSpec with Matchers with MockFactory {
+class OrderTest extends FlatSpec with Matchers {
 
-  "The order" should "match a sell order" in {
-    val buyOrder = Order("AAPL", Buy, 5, BigDecimal(110.49), "test-1")
+  "One order" should "match another order if " +
+    "they have the same instrument and quantity, opposite directions and sell price <= buy price" in {
 
-    val expectations = Table(
-      ("sellOrder", "matched"),
+    val order = Order("AAPL", Buy, 2, BigDecimal(120), "test-1")
 
-      (Order("AAPL", Sell, 5, BigDecimal(90.32), "test-2"), true),
-      (Order("AAPL", Sell, 5, BigDecimal(200.16), "test-2"), false)
+    val matchingOrderValues = Table(
+      ("instrumentCode", "direction", "quantity", "price", "expectedResult"),
+
+      ("GOOG", Sell, 2, BigDecimal(120), false),
+      ("AAPL", Buy, 2, BigDecimal(120), false),
+      ("AAPL", Sell, 1, BigDecimal(120), false),
+      ("AAPL", Sell, 2, BigDecimal(130), false),
+      ("AAPL", Sell, 2, BigDecimal(110), true),
+      ("AAPL", Sell, 2, BigDecimal(120), true)
     )
 
-    forAll(expectations) { (sellOrder, matched) =>
-      buyOrder.matches(sellOrder) should be(matched)
-    }
-  }
+    forAll(matchingOrderValues) { (instrumentCode, direction, quantity, price, expectedResult) =>
+      val anotherOrder = Order(instrumentCode, direction, quantity, price, "test-2")
 
-  it should "match a buy order" in {
-    val sellOrder = Order("AAPL", Sell, 5, BigDecimal(110.49), "test-1")
-
-    val expectations = Table(
-      ("buyOrder", "matched"),
-
-      (Order("AAPL", Buy, 5, BigDecimal(90.32), "test-2"), false),
-      (Order("AAPL", Buy, 5, BigDecimal(200.16), "test-2"), true)
-    )
-
-    forAll(expectations) { (buyOrder, matched) =>
-      sellOrder.matches(buyOrder) should be(matched)
+      order.matches(anotherOrder) should be (expectedResult)
     }
   }
 }

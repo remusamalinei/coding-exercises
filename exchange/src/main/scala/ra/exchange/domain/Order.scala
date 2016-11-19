@@ -18,15 +18,11 @@ case class Order
   customerName: String
 ) {
 
-  def matches(matchAgainst: Order): Boolean = {
-    direction match {
-      case Buy =>
-        if (matchAgainst.direction == Sell) price >= matchAgainst.price
-        else false
-      case Sell =>
-        if (matchAgainst.direction == Buy) price <= matchAgainst.price
-        else false
-    }
+  def matches(that: Order): Boolean = {
+    (instrumentCode == that.instrumentCode) &&
+      (quantity == that.quantity) &&
+      (direction != that.direction) &&
+      (((direction == Buy) && (price >= that.price)) || ((direction == Sell) && (price <= that.price)))
   }
 }
 
