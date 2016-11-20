@@ -1,6 +1,7 @@
 package ra.exchange.domain
 
 import ra.exchange.domain.Order.Direction._
+import ra.exchange.domain.Order.Direction
 
 /**
   * @author Remus Amalinei
@@ -68,4 +69,42 @@ case class OrderAggregate
   private def add(order: Order, list: List[Order], sorted: (Order, Order) => Boolean): List[Order] =
     if (list.isEmpty || sorted(order, list.head)) order :: list
     else list.head :: add(order, list.tail, sorted)
+
+  def openOrdersQuantity(direction: Direction.Value): Int = {
+    val openOrders = direction match {
+      case Buy => openBuyOrders
+      case Sell => openSellOrders
+    }
+
+    openOrders.map(_.quantity).sum
+  }
+
+  def averageExecutionPrice: Option[BigDecimal] = {
+    if (executedOrders.nonEmpty) {
+      val totalQuantity = executedOrders.map(_.order.quantity).sum
+      val totalPrice = executedOrders.
+        map(eo => eo.order.quantity * eo.order.price).
+        sum
+
+      Some(totalPrice / totalQuantity)
+    } else {
+      None
+    }
+  }
+
+  def executedQuantity(customerName: String): Int = {
+    val quantities = executedOrders.map { eo =>
+      if (customerName == eo.order.customerName) eo.order.direction match {
+        case Buy => eo.order.quantity
+        case Sell => -eo.order.quantity
+      } else if (customerName == eo.matchedBy.customerName) eo.matchedBy.direction match {
+        case Buy => eo.matchedBy.quantity
+        case Sell => -eo.matchedBy.quantity
+      } else {
+        0
+      }
+    }
+
+    quantities.sum
+  }
 }
