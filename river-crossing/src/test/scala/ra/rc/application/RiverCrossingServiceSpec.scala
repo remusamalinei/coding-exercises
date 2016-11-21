@@ -2,14 +2,11 @@ package ra.rc.application
 
 import ra.rc.domain.ConstantPlayers._
 import ra.rc.domain.{Player, Solution, SolutionStep}
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{Matchers, FeatureSpec, GivenWhenThen}
 
 /**
  * @author Remus Amalinei
  */
-@RunWith(classOf[JUnitRunner])
 class RiverCrossingServiceSpec extends FeatureSpec with GivenWhenThen with Matchers{
 
   info("As a user")

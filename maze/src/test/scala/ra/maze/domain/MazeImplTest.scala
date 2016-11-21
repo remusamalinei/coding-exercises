@@ -3,16 +3,13 @@ package ra.maze.domain
 import ra.maze.domain.CellType.{EmptySpace, Exit, Start, Wall}
 import ra.maze.domain.service.MazeReader
 
-import org.junit.runner.RunWith
 import org.scalamock.scalatest.MockFactory
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.prop.TableDrivenPropertyChecks.{Table, forAll}
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
   * @author Remus Amalinei
   */
-@RunWith(classOf[JUnitRunner])
 class MazeImplTest extends FlatSpec with Matchers with MockFactory {
 
   "Maze" should "be successfully constructed from correct representation" in {

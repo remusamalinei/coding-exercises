@@ -2,14 +2,11 @@ package ra.rps.view
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream, PrintStream}
 
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FeatureSpec, GivenWhenThen, Matchers}
 
 /**
   * @author Remus Amalinei
   */
-@RunWith(classOf[JUnitRunner])
 class ConsoleGameViewSpec extends FeatureSpec with GivenWhenThen with Matchers {
 
   info("As a gamer")

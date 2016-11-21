@@ -5,15 +5,12 @@ import ra.rps.domain.RoundResult
 import ra.rps.domain.Shape.{Paper, Rock}
 import ra.rps.application.GameService
 
-import org.junit.runner.RunWith
 import org.scalamock.scalatest.MockFactory
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
   * @author Remus Amalinei
   */
-@RunWith(classOf[JUnitRunner])
 class GameControllerTest extends FlatSpec with Matchers with MockFactory {
 
   "GameController" should "delegate play to GameService" in {

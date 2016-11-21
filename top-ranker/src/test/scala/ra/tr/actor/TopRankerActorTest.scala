@@ -6,15 +6,12 @@ import ra.tr.domain.{Player, Score}
 
 import akka.actor.{ActorSystem, Props}
 import akka.testkit.{ImplicitSender, TestKit}
-import org.junit.runner.RunWith
 import org.scalamock.scalatest.MockFactory
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{BeforeAndAfterAll, WordSpecLike}
 
 /**
  * @author Remus Amalinei
  */
-@RunWith(classOf[JUnitRunner])
 class TopRankerActorTest(_system: ActorSystem)
   extends TestKit(_system)
   with ImplicitSender

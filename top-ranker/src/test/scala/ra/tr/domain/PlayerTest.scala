@@ -1,13 +1,10 @@
 package ra.tr.domain
 
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
  * @author Remus Amalinei
  */
-@RunWith(classOf[JUnitRunner])
 class PlayerTest extends FlatSpec with Matchers {
 
   "A Player" should "not be constructed with a null name" in {

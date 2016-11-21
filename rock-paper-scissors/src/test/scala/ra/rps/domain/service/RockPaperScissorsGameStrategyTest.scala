@@ -3,15 +3,12 @@ package ra.rps.domain.service
 import ra.rps.domain.Outcome.{Loss, Tie, Win}
 import ra.rps.domain.Shape.{Paper, Rock, Scissors}
 
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.prop.TableDrivenPropertyChecks.{Table, forAll}
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
   * @author Remus Amalinei
   */
-@RunWith(classOf[JUnitRunner])
 class RockPaperScissorsGameStrategyTest extends FlatSpec with Matchers {
 
   val ExpectedShapes = Set(Rock, Paper, Scissors)

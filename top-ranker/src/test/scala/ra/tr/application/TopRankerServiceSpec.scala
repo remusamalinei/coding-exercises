@@ -12,14 +12,11 @@ import java.util.concurrent.TimeUnit
 
 import akka.actor.{ActorRef, ActorSystem, Props}
 import akka.util.Timeout
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{BeforeAndAfterEach, FeatureSpec, GivenWhenThen, Matchers}
 
 /**
  * @author Remus Amalinei
  */
-@RunWith(classOf[JUnitRunner])
 class TopRankerServiceSpec extends FeatureSpec with GivenWhenThen with Matchers with BeforeAndAfterEach {
 
   info("As a Product Owner")

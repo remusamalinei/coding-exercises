@@ -2,14 +2,11 @@ package ra.tr.domain.service
 
 import ra.tr.domain.{Player, Score}
 
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
  * @author Remus Amalinei
  */
-@RunWith(classOf[JUnitRunner])
 class ScoreSorterServiceImplTest extends FlatSpec with Matchers {
 
   "The ScoreSorterServiceImpl" should "sort scores descending" in {

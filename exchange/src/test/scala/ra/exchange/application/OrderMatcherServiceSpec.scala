@@ -3,14 +3,11 @@ package ra.exchange.application
 import ra.exchange.domain.Order
 import ra.exchange.domain.Order.Direction.{Buy, Sell}
 
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FeatureSpec, GivenWhenThen, Matchers}
 
 /**
   * @author Remus Amalinei
   */
-@RunWith(classOf[JUnitRunner])
 class OrderMatcherServiceSpec extends FeatureSpec with GivenWhenThen with Matchers {
 
   info(

@@ -4,16 +4,13 @@ import ra.rps.domain.Outcome.{Loss, Tie, Win}
 import ra.rps.domain.Shape.{Paper, Rock, Scissors}
 import ra.rps.domain.service.ShapeThrower
 
-import org.junit.runner.RunWith
 import org.scalamock.scalatest.MockFactory
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.prop.TableDrivenPropertyChecks.{Table, forAll}
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
   * @author Remus Amalinei
   */
-@RunWith(classOf[JUnitRunner])
 class PlayerImplTest extends FlatSpec with Matchers with MockFactory {
 
   "Player" should "throw an exception when is constructed with invalid params" in {

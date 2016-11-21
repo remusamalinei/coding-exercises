@@ -3,16 +3,13 @@ package ra.maze.domain
 import ra.maze.domain.CellType.Exit
 import ra.maze.infrastructure.{NoSolution1, NoSolution2, NoSolution3, Solution2, Solution3, Solution1}
 
-import org.junit.runner.RunWith
 import org.scalamock.scalatest.MockFactory
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.prop.TableDrivenPropertyChecks.{Table, forAll}
 import org.scalatest.{FeatureSpec, GivenWhenThen, Matchers}
 
 /**
   * @author Remus Amalinei
   */
-@RunWith(classOf[JUnitRunner])
 class MazeExplorerSpec extends FeatureSpec with GivenWhenThen with Matchers with MockFactory {
 
   info("As an Explorer of Mazes")

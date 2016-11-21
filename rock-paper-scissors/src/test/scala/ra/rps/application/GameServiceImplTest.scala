@@ -4,15 +4,12 @@ import ra.rps.domain.Outcome.{Loss, Win}
 import ra.rps.domain.Shape.{Paper, Rock}
 import ra.rps.domain.{Player, RoundResult}
 
-import org.junit.runner.RunWith
 import org.scalamock.scalatest.MockFactory
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
   * @author Remus Amalinei
   */
-@RunWith(classOf[JUnitRunner])
 class GameServiceImplTest extends FlatSpec with Matchers with MockFactory {
 
   "The game" should "be played by delegating to domain" in {

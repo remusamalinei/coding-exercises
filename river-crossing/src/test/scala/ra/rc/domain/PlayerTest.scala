@@ -1,14 +1,11 @@
 package ra.rc.domain
 
 import ra.rc.domain.ConstantPlayers._
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
  * @author Remus Amalinei
  */
-@RunWith(classOf[JUnitRunner])
 class PlayerTest extends FlatSpec with Matchers {
 
   "A Player" should "injure a player" in {

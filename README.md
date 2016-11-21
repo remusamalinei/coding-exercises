@@ -23,10 +23,10 @@ A solution for the River Crossing puzzle, see [my blog post](https://remusamalin
 A console-based implementation of the [rock-paper-scissors game](https://en.wikipedia.org/wiki/Rock-paper-scissors)
 
 **Build and Run the Project**  
-Prerequisites: Java, Scala and Gradle installed.  
-From the root directory (where the `build.gradle` file is), run the following 2 commands:  
-`gradle rock-paper-scissors:clean rock-paper-scissors:build`  
-`java -cp rock-paper-scissors/build/libs/rock-paper-scissors.jar:$SCALA_HOME/lib/* ra.rps.GameStarter`
+Prerequisites: Java, Scala and sbt installed.  
+From the root directory (where the `build.sbt` file is), run the following 2 commands:  
+`sbt "project rock-paper-scissors" clean package`
+`scala rock-paper-scissors/target/scala-2.11/rock-paper-scissors_2.11-1.0.0.jar`
 
 **Design Considerations**  
 The `GameService` provides the business value playing the game by orchestrating the interactions between two domain

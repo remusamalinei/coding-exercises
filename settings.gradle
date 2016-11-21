@@ -1,5 +1,0 @@
-include 'exchange',
-        'maze',
-        'river-crossing',
-        'rock-paper-scissors',
-        'top-ranker'

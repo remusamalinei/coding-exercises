@@ -1,14 +1,11 @@
 package ra.rc.domain
 
 import ra.rc.domain.ConstantPlayers._
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
  * @author Remus Amalinei
  */
-@RunWith(classOf[JUnitRunner])
 class SolutionStepTest extends FlatSpec with Matchers {
 
   "A solution step" should "produce the next solution steps when the river is crossed" in {

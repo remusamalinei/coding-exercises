@@ -3,8 +3,6 @@ package ra.exchange.domain
 import ra.exchange.domain.Order.Direction
 import ra.exchange.domain.Order.Direction._
 
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.prop.TableDrivenPropertyChecks._
 import org.scalatest.prop.Tables.Table
 import org.scalatest.{FlatSpec, Matchers}
@@ -12,7 +10,6 @@ import org.scalatest.{FlatSpec, Matchers}
 /**
   * @author Remus Amalinei
   */
-@RunWith(classOf[JUnitRunner])
 class OrderAggregateTest extends FlatSpec with Matchers {
 
   "The aggregate order" should "record buy orders sorted descending with equal prices in the succession they are added" in {

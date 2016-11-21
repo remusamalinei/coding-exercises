@@ -2,15 +2,12 @@ package ra.exchange.domain
 
 import ra.exchange.domain.Order.Direction.{Buy, Sell}
 
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.prop.TableDrivenPropertyChecks.{Table, forAll}
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
   * @author Remus Amalinei
   */
-@RunWith(classOf[JUnitRunner])
 class OrderTest extends FlatSpec with Matchers {
 
   "One order" should "match another order if " +

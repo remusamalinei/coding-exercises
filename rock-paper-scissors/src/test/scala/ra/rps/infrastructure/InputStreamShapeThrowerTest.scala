@@ -6,15 +6,12 @@ import ra.rps.domain.service.GameStrategy
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream, PrintStream}
 
-import org.junit.runner.RunWith
 import org.scalamock.scalatest.MockFactory
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{BeforeAndAfterAll, FlatSpec, Matchers}
 
 /**
   * @author Remus Amalinei
   */
-@RunWith(classOf[JUnitRunner])
 class InputStreamShapeThrowerTest extends FlatSpec with Matchers with MockFactory with BeforeAndAfterAll {
 
   override def beforeAll(): Unit = {

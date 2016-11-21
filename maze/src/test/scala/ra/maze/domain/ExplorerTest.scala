@@ -1,14 +1,11 @@
 package ra.maze.domain
 
-import org.junit.runner.RunWith
 import org.scalamock.scalatest.MockFactory
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
   * @author Remus Amalinei
   */
-@RunWith(classOf[JUnitRunner])
 class ExplorerTest extends FlatSpec with Matchers with MockFactory {
 
   "Explorer" should "drop in to the Start point" in {

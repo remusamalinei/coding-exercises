@@ -4,15 +4,12 @@ import ra.rps.domain.Shape.Rock
 import ra.rps.domain.service.GameStrategy
 import ra.rps.infrastructure.random.IntGenerator
 
-import org.junit.runner.RunWith
 import org.scalamock.scalatest.MockFactory
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
  * @author Remus Amalinei
  */
-@RunWith(classOf[JUnitRunner])
 class RandomShapeThrowerTest extends FlatSpec with Matchers with MockFactory {
 
   "RandomShapeThrower" should "offer next shapes using the IntGenerator" in {
