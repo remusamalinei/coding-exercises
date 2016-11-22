@@ -1,4 +1,4 @@
-# coding-exercises
+#Coding Exercises
 A collection of coding exercises solved using BDD and TDD, Scala and Scala-based testing frameworks.  
 The acceptance/integration tests were written first, as automated validations for the scenarios that bring business
 value. Using DDD best practices, the domain is at the core of the solution. Unit tests are used to prove the logic
@@ -25,7 +25,7 @@ A console-based implementation of the [rock-paper-scissors game](https://en.wiki
 **Build and Run the Project**  
 Prerequisites: Java, Scala and sbt installed.  
 From the root directory (where the `build.sbt` file is), run the following 2 commands:  
-`sbt "project rock-paper-scissors" clean package`
+`sbt "project rock-paper-scissors" clean package`  
 `scala rock-paper-scissors/target/scala-2.11/rock-paper-scissors_2.11-1.0.0.jar`
 
 **Design Considerations**  
