@@ -15,7 +15,12 @@ lazy val maze = project.
   settings(Seq(
     libraryDependencies ++= Seq(
       "org.scalamock" %% "scalamock-scalatest-support" % "3.2.2" % Test
-    )))
+    )
+  ))
+
+lazy val `prime-numbers` = project.
+  in(file("prime-numbers")).
+  settings(commonSettings: _*)
 
 lazy val `river-crossing` = project.
   in(file("river-crossing")).
@@ -27,7 +32,8 @@ lazy val `rock-paper-scissors` = (project in file("rock-paper-scissors")).
     version := "1.0.0",
     libraryDependencies ++= Seq(
       "org.scalamock" %% "scalamock-scalatest-support" % "3.2.2" % Test
-    )))
+    )
+  ))
 
 lazy val `top-ranker` = (project in file("top-ranker")).
   settings(commonSettings: _*).
@@ -37,4 +43,5 @@ lazy val `top-ranker` = (project in file("top-ranker")).
 
       "com.typesafe.akka" %% "akka-actor-tests" % "2.3.12" % Test,
       "org.scalamock" %% "scalamock-scalatest-support" % "3.2.2" % Test
-    )))
+    )
+  ))
