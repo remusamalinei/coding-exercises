@@ -20,7 +20,12 @@ lazy val maze = project.
 
 lazy val `prime-numbers` = project.
   in(file("prime-numbers")).
-  settings(commonSettings: _*)
+  settings(commonSettings: _*).
+  settings(Seq(
+    libraryDependencies ++= Seq(
+      "org.scalamock" %% "scalamock-scalatest-support" % "3.2.2" % Test
+    )
+  ))
 
 lazy val `river-crossing` = project.
   in(file("river-crossing")).
