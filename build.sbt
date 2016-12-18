@@ -23,7 +23,17 @@ lazy val `prime-numbers` = project.
   settings(commonSettings: _*).
   settings(Seq(
     libraryDependencies ++= Seq(
-      "org.scalamock" %% "scalamock-scalatest-support" % "3.2.2" % Test
+      "org.scalatra" %% "scalatra" % "2.4.1",
+      "org.scalatra" %% "scalatra-scalate" % "2.4.1",
+      "org.scalatra" %% "scalatra-json" % "2.4.1",
+      "org.json4s" %% "json4s-jackson" % "3.4.2",
+
+      "org.scalamock" %% "scalamock-scalatest-support" % "3.2.2" % Test,
+      "org.scalatra" %% "scalatra-scalatest" % "2.4.1" % Test,
+      "org.eclipse.jetty" % "jetty-webapp" % "9.3.14.v20161028" % Test,
+      "org.slf4j" % "slf4j-log4j12" % "1.7.21" % Test,
+
+      "javax.servlet" % "javax.servlet-api" % "3.1.0" % Provided
     )
   ))
 
